@@ -1,45 +1,47 @@
 package mz.co.emose.exchangerateapi.dto;
 
-import mz.co.emose.exchangerateapi.model.Currency;
-import mz.co.emose.exchangerateapi.model.ExchangeRate;
-import mz.co.emose.exchangerateapi.model.Provider;
-
+import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
+/**
+ * @author Jose Julai Ritsure
+ */
 public class ExchangeRateDTO {
-    private Provider provider;
 
-    private List<ExchangeRate> rates;
+    private String currency;
 
-    private Date dateTime;
+    private BigDecimal purchase;
 
-    public ExchangeRateDTO(Provider provider, List<ExchangeRate> rates) {
-        this.dateTime = new Date();
-        this.provider = provider;
-        this.rates = rates;
-    }
-    public Date getDateTime() {
-        return dateTime;
+    private BigDecimal sale;
+
+    public ExchangeRateDTO(String currency, BigDecimal purchase, BigDecimal sale) {
+        this.currency = currency;
+        this.purchase = purchase;
+        this.sale = sale;
     }
 
-    public void setDateTime(Date dateTime) {
-        this.dateTime = dateTime;
+    public String getCurrency() {
+        return currency;
     }
 
-    public Provider getProvider() {
-        return provider;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
-    public void setProvider(Provider provider) {
-        this.provider = provider;
+    public BigDecimal getPurchase() {
+        return purchase;
     }
 
-    public List<ExchangeRate> getRates() {
-        return rates;
+    public void setPurchase(BigDecimal purchase) {
+        this.purchase = purchase;
     }
 
-    public void setRates(List<ExchangeRate> rates) {
-        this.rates = rates;
+    public BigDecimal getSale() {
+        return sale;
     }
+
+    public void setSale(BigDecimal sale) {
+        this.sale = sale;
+    }
+
 }
