@@ -3,6 +3,7 @@ package mz.co.emose.exchangerateapi.model;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "EXCHANGE_RATE")
@@ -18,13 +19,8 @@ public class ExchangeRate implements Serializable {
     private double purchase;
     @Column(name = "SALE", insertable = true, updatable = true, nullable = false)
     private double sale;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "CURRENCY_ID", insertable = false, updatable = false, nullable = false)
-    private Currency currency;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "PROVIDER_ID", insertable = false, updatable = false, nullable = false)
-    private Provider provider;
-
+    @Column(name = "CREATED_AT", insertable = true, updatable = true, nullable = false)
+    private Date createdAt;
     public void setId(Long id) {
         this.id = id;
     }
@@ -49,22 +45,6 @@ public class ExchangeRate implements Serializable {
         this.providerId = providerId;
     }
 
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
-
-    public Provider getProvider() {
-        return provider;
-    }
-
-    public void setProvider(Provider provider) {
-        this.provider = provider;
-    }
-
     public double getPurchase() {
         return purchase;
     }
@@ -80,4 +60,9 @@ public class ExchangeRate implements Serializable {
     public void setSale(double sale) {
         this.sale = sale;
     }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
 }
