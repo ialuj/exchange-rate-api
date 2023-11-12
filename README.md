@@ -12,3 +12,7 @@
 Build and Deploy the API
 
  Technologies: Spring Boot API running on Java 8 JVM and using H2 Database which the data are base on schema.sql file located on the resources folder.
+
+ mvn clean install || mvn clean package
+
+ Find the jar folder on target folder.
