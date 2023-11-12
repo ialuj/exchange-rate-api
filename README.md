@@ -16,3 +16,9 @@ Build and Deploy the API
  mvn clean install || mvn clean package
 
  Find the jar folder on target folder.
+
+ Running the jar:
+
+With the terminal opened on the target folder run the following command:
+
+java -jar exchange-rate-api-0.0.1-SNAPSHOT.jar
