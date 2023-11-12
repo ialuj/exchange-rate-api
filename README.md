@@ -8,3 +8,7 @@
 
 2. Search Exchange Rates from all providers
    http:localhost:8080/api/v1/all/rates
+
+Build and Deploy the API
+
+ Technologies: Spring Boot API running on Java 8 JVM and using H2 Database which the data are base on schema.sql file located on the resources folder.
